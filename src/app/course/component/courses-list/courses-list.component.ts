@@ -14,9 +14,10 @@ import { Course } from './../../model/course.model';
 })
 export class CoursesListComponent implements OnInit {
 
+
   courses$!: Observable<Course[]>;
 
-  courseToBeUpdated?: Course | null;
+  courseToBeUpdated!: any; // Type Course
 
   isUpdateActivated = false;
 
@@ -36,20 +37,17 @@ export class CoursesListComponent implements OnInit {
   }
 
   updateCourse(updateForm: any) {
-    if (this.courseToBeUpdated) {
+    const update: Update<Course> = {
+      id: this.courseToBeUpdated.id,
+      changes: {
+        ...this.courseToBeUpdated,
+        ...updateForm.value
+      }
+    };
 
-      const update: Update<Course> = {
-        id: this.courseToBeUpdated.id,
-        changes: {
-          ...this.courseToBeUpdated,
-          ...updateForm.value
-        }
-      };
+    this.store.dispatch(courseActionTypes.updateCourse({ update }));
 
-      this.store.dispatch(courseActionTypes.updateCourse({ update }));
-
-      this.isUpdateActivated = false;
-      this.courseToBeUpdated = null;
-    }
+    this.isUpdateActivated = false;
+    this.courseToBeUpdated = null;
   }
 }
