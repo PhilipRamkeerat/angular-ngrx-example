@@ -1,27 +1,31 @@
-# AngularNgrxExample
+Projeto baseado no exemplo do link : Angular: Build a CRUD Application With NgRx
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+https://betterprogramming.pub/angular-building-a-crud-application-with-ngrx-40e5f1c0b50c
 
-## Development server
+Para rodar o projeto é necessário um arquivo .jar disponibilizado no link acima
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Primeiro Step para rodar o projeto:
 
-## Code scaffolding
+``java -jar {path_to_the_jar_file}/course-1.0.0-SNAPSHOT.jar``
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Segundo Step: ``ng serve``
 
-## Build
+Vá para: http://localhost:4200/courses e prossiga com o fluxo de cadastro
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Arquitetura dos componentes
 
-## Running unit tests
+Retrieve:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Retrieve](./images/retrieve.png)
 
-## Running end-to-end tests
+Create:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![Create](./images/save.png)
 
-## Further help
+Update: 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Update](./images/update.png)
+
+Delete: 
+
+![Delete](./images/delete.png)
